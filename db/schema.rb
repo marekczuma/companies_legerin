@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20170213104520) do
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "budget"
-    t.integer  "employee_emount"
+    t.integer  "income",          limit: 8
+    t.integer  "employee_amount", limit: 8
     t.string   "address"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

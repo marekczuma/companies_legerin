@@ -3,8 +3,8 @@ class CreateCompanies < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name
       t.text :description
-      t.integer :budget
-      t.integer :employee_emount
+      t.integer :income, limit: 8
+      t.integer :employee_amount, limit: 8
       t.string :address
 
       t.timestamps null: false
