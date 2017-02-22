@@ -13,6 +13,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml', '~> 4.0'
+# ElasticSearch
+gem 'elasticsearch-model', git: 'https://github.com/elastic/elasticsearch-rails.git'
+gem 'elasticsearch-rails', git: 'https://github.com/elastic/elasticsearch-rails.git'
+gem 'elasticsearch-persistence', git: 'https://github.com/elastic/elasticsearch-rails.git'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
