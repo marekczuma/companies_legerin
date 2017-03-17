@@ -60,4 +60,26 @@ class Company < ActiveRecord::Base
       }
     )
   end
+
+  def self.simple_bucket
+    __elasticsearch__.search(
+      {
+        size: 0,
+        aggs: {
+          group_by_income:{
+            range:{
+              field: "income",
+              ranges: [
+                { to: 1000 },
+                { from: 1001, to: 1000000 },
+                { from: 1000001, to: 1000000000 },
+                { from: 1000000001, to: 50000000000 },
+                { from: 50000000001 }
+              ]
+            }
+          }
+        }
+      }
+    )
+  end
 end
